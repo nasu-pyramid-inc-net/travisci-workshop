@@ -1,8 +1,6 @@
 language: java
 script:
     - java -jar ./bin/yuicompressor-2.4.8.jar -o '.css$:-min.css' css/*.css
-    - mkdir -p out
-    - cp css/*-min.css out/
 
 deploy:
     provider: s3
