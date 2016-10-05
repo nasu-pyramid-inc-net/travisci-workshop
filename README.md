@@ -1,4 +1,6 @@
 # TravisCI勉強会
+[![Build Status](https://travis-ci.org/nasu-pyramid-inc-net/travisci-workshop.svg?branch=master)](https://travis-ci.org/nasu-pyramid-inc-net/travisci-workshop)
+
 
 ## ゴール
 
