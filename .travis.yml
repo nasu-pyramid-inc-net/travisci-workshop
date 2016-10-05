@@ -1,4 +1,8 @@
 language: java
 script:
   - java -jar ./bin/yuicompressor-2.4.8.jar ./css/a.css
+notifications:
+    slack: sharpensword-net:xLWS9sGLUjPZIw1bCMxBKdZz
+        on_success: always
+
 
