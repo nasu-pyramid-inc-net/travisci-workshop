@@ -1,6 +1,8 @@
 language: java
 script:
     - java -jar ./bin/yuicompressor-2.4.8.jar -o '.css$:-min.css' css/*.css
+    - mkdir -p out
+    - cp css/*-min.css out/
 
 deploy:
     provider: s3
@@ -10,7 +12,7 @@ deploy:
     region: ap-northeast-1
     endpoint: s3-ap-northeast-1.amazonaws.com
     skip_cleanup: true
-    upload-dir: "${TRAVIS_BUILD_NUMBER}"/css
+    upload-dir: "${TRAVIS_BUILD_NUMBER}/css"
     on:
         branch: master
 
