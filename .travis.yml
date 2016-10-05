@@ -1,6 +1,8 @@
 language: java
+before_script:
+  - mkdir -p out
 script:
-  - java -jar ./bin/yuicompressor-2.4.8.jar -o '.css$:-min.css' *.css
+  - java -jar ./bin/yuicompressor-2.4.8.jar -o out/'.css$:-min.css' css/*.css
 deploy:
     provider: s3
     bucket: nasu-travis-ci
