@@ -3,6 +3,7 @@ script:
   - mkdir -p out
   - cd out
   - java -jar ./bin/yuicompressor-2.4.8.jar -o '.css$:-min.css' ../css/*.css
+
 deploy:
     provider: s3
     access_key_id: "${access_key_id}"
@@ -14,6 +15,7 @@ deploy:
     upload-dir: "${TRAVIS_BUILD_NUMBER}"/css
     on:
         branch: master
+
 notifications:
     slack: sharpensword-net:xLWS9sGLUjPZIw1bCMxBKdZz
     on_success: always
