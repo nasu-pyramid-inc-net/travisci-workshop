@@ -1,6 +1,15 @@
 language: java
 script:
-  - java -jar ./bin/yuicompressor-2.4.8.jar ./css/a.css
+  - java -jar ./bin/yuicompressor-2.4.8.jar -o '.css$:-min.css' *.css
+deploy:
+    provider: s3
+    bucket: nasu-travis-ci
+    region: ap-northeast-1
+    endpoint: s3-ap-northeast-1.amazonaws.com
+    local-dir: css
+    upload-dir: css
+    on:
+        branch: master
 notifications:
     slack: sharpensword-net:xLWS9sGLUjPZIw1bCMxBKdZz
     on_success: always
